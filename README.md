@@ -8,6 +8,6 @@ Some conventions:
 
 1. Nasal and superior eccentricities are specified with negative values, while temporal and inferior eccentricities are specified with positive ones.
 
-2. The original paper gives densities in (**mm<sup>-2</sup>**) as a function of **mm**. The `get_density_and_rowspacing` function takes eccentricity in degrees and converts to **mm** using a factor of **300 &mu; m/deg**.
+2. The original paper gives densities in (**mm<sup>-2</sup>**) as a function of **mm**. The `get_density_and_rowspacing` function takes eccentricity in degrees and converts to **mm** using a factor of **300 &mu;m/deg**.
 
 [Curcio, Christine A., et al. "Human photoreceptor topography." *Journal of Comparative Neurology* 292.4 (1990): 497-523.](https://www.ncbi.nlm.nih.gov/pubmed/2324310)
