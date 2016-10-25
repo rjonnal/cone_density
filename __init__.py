@@ -85,6 +85,7 @@ class ConeDensityInterpolator:
         plt.xlabel('eccentricity (deg)')
         plt.ylabel('eccentricity (deg)')
         plt.title('cone density ($mm^{-2}$)')
+        plt.savefig('./maps/density.png')
         plt.colorbar()
 
         plt.figure()
@@ -93,6 +94,7 @@ class ConeDensityInterpolator:
         plt.ylabel('eccentricity (deg)')
         plt.title('cone row spacing ($\mu m$)')
         plt.colorbar()
+        plt.savefig('./maps/row_spacing.png')
         plt.show()
 
 if __name__=='__main__':
