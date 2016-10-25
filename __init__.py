@@ -85,8 +85,8 @@ class ConeDensityInterpolator:
         plt.xlabel('eccentricity (deg)')
         plt.ylabel('eccentricity (deg)')
         plt.title('cone density ($mm^{-2}$)')
-        plt.savefig('./maps/density.png')
         plt.colorbar()
+        plt.savefig('./maps/density.png')
 
         plt.figure()
         plt.imshow(rs_microns,interpolation='none',extent=[-lim,lim,-lim,lim])
