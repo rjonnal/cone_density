@@ -59,8 +59,30 @@ class ConeDensityInterpolator:
         # density is weighted sum of vertical and horizontal densities
         density = hdensity*hweight+vdensity*vweight
 
+        # packing_density (phi) is the ratio of the area of a circle to the area of the smallest regular hexagon
+        # into which it can be inscribed; it's 0.907, but let's calculate it explicitly for clarity, with A_c
+        # being the area of a circle and A_h being the area of the hexagon in which it's inscribed, r being the
+        # circle's radius, and a being the edge length of the hexagon
+        # A_c = pi r^2
+        # A_h = a^2 * 3 sqrt(3)/2
+        # The hexagon area can be expressed in terms of r as well (some basic geometry omitted here):
+        # A_h = (r/cos(pi/6))^2 * 3 sqrt(3)/2
+        # Now we can derive packing density phi = A_c / A_h
+        phi = np.pi / (3.0*np.sqrt(3)/2.0*(1/np.cos(np.pi/6.0))**2)
+
+        # Since density is the number of cone-inscribed hexagons per area, its inverse is the area of one
+        # hexagon; given that, and the definition of phi, we can compute the cone radius:
+        cone_radius = np.sqrt(phi/(np.pi*density))
+        
+        
+        # Finally, compute the row spacing from the cone diameter (2*cone_radius), and express in meters
+        row_spacing = np.cos(np.pi/6.0)*2.0*cone_radius*1e-3
+        
         # compute the row spacing 
-        row_spacing = 0.9306 / np.sqrt(density)*1e-3
+        #row_spacing = 0.9306 / np.sqrt(density)*1e-3
+
+
+        
         return density,row_spacing
         
     def test(self):
