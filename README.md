@@ -41,7 +41,7 @@ print row_spacing*1e6 # outputs 8.0686131470546094 (um)
 
 #### Interconversion of density, diameter, and row spacing
 
-The function interpolates cone densities from Curcio et al's data, but returns both density and row spacing. Here's how the latter is computed from the former. Let's assume the cones are packed in a perfect hexagonal (or triangular) lattice. If they were hexagonal in shape, the number of cones would be the ratio of the total area to the area of one hexagon. Since the cones are circular, we need to divide the total area by the area of the smallest hexagon in which the cone could be inscribed. If $r$ is the cone's radius, the area of this hexagon can be expressed in terms of $r$, since the circle's diameter is equal to the length of a line segment normal to two opposite sides of the hexagon:
+The function interpolates cone densities from Curcio et al's data, but returns both density and row spacing. Here's how the latter is computed from the former. Let's assume the cones are packed in a perfect hexagonal (or triangular) lattice. If they were hexagonal in shape, the number of cones would be the ratio of the total area to the area of one hexagon. Since the cones are circular, we need to divide the total area by the area of the smallest hexagon in which the cone could be inscribed. If r is the cone's radius, the area of this hexagon can be expressed in terms of r, since the circle's diameter is equal to the length of a line segment normal to two opposite sides of the hexagon:
 
 <img src="https://render.githubusercontent.com/render/math?math=A_h = \frac{3\sqrt{3}}{2}\left[\frac{r}{\cos(\pi/6)}\right]^2">
 
